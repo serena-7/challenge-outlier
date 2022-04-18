@@ -15,5 +15,11 @@ function findOutlier(arr){
     }
 }
 
-console.log(findOutlier([2, 4, 0, 100, 4, 11, 2602, 36]));
-console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21]));
+function findOutlier2(arr){
+    let evens = arr.filter(ele => ele % 2 === 0);
+    let odds = arr.filter(ele => ele % 2 !== 0);
+    return evens.length === 1 ? evens[0] : odds[0];
+}
+
+console.log(findOutlier2([2, 4, 0, 100, 4, 11, 2602, 36]));
+console.log(findOutlier2([160, 3, 1719, 19, 11, 13, -21]));
